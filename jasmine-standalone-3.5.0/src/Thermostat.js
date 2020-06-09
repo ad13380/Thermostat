@@ -5,23 +5,21 @@ class Thermostat {
   constructor() {
     this.temp = 20;
     this.psm = true;
+    this.MINIMUM_TEMPERATURE = 10;
+    this.DEFAULT_VALUE = 20
   }
 
   reset() {
-    this.temp = defaultVal;
+    this.temp = this.DEFAULT_VALUE;
   }
 
-  raise(value) {
+  raise(value) { // this probably needs to change
     this.temp += value;
   }
 
-  lower(value) {
+  lower(value) { // this probably needs to change
     if (this._tempLowerLimit(value) === true) {
-  
       return (this.temp -= value);
-    }
-    else {
-      return 'Hello';
     }
   }
 
@@ -50,7 +48,7 @@ class Thermostat {
   }
 
   _tempLowerLimit(value) {
-    if (this.temp - value >= 10) {
+    if (this.temp - value >= this.MINIMUM_TEMPERATURE) {
       return true;
     } else {
       return false;

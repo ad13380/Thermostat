@@ -34,3 +34,14 @@ return medium-usage
 else 
 high-usage
 
+
+-----
+<form action="/set-temp" method="post">
+  <input type="number" value="set_temp">
+</form>
+
+<form action="/switch-psm" method="post">
+  <input type="submit" value="Switch PSM">
+</form>
+
+@switchPsm()
