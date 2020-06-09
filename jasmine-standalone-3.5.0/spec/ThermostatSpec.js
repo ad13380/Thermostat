@@ -50,4 +50,10 @@ describe("Thermostat", function () {
     thermostat.raise(5)
     expect(thermostat.currentUsage()).toEqual('high-usage')
   });
+
+  it("should have the ability to be reset", function() {
+    thermostat.raise(7)
+    thermostat.reset()
+    expect(thermostat.temp).toEqual(20)
+  });
 });

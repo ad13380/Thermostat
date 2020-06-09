@@ -1,7 +1,14 @@
+const defaultVal = 20
+
+
 class Thermostat {
   constructor() {
     this.temp = 20;
     this.psm = true;
+  }
+
+  reset() {
+    this.temp = defaultVal;
   }
 
   raise(value) {
@@ -49,8 +56,16 @@ class Thermostat {
       return false;
     }
   }
+
+  _tempUpperLimit(value) {
+    if (this.temp + value >= this.maxTemp) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
-// let thermostat = new Thermostat();
+let thermostat = new Thermostat();
 // thermostat.lower(10);
-// console.log(thermostat.temp);
+console.log(defaultVal);
