@@ -16,12 +16,14 @@ max_temp = 25
 else
 max_temp = 32
 
-function raise
-temp + 1
+function raise(value)
+temp + value
 
 
 function lower
 temp - 1
+
+temp -= value unless (temp -= value) < min_temp
 
 function current_usage
 if temp < 18
