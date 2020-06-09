@@ -46,8 +46,8 @@ describe("Thermostat", function () {
     expect(thermostat.currentUsage()).toEqual('medium-usage')
   });
 
-  it("should return 'low-usage' if temperature is bellow 18", function() {
-    thermostat.lower(3)
-    expect(thermostat.currentUsage()).toEqual('low-usage')
+  it("should return 'high-usage' if temperature is above 25", function() {
+    thermostat.raise(5)
+    expect(thermostat.currentUsage()).toEqual('high-usage')
   });
 });
