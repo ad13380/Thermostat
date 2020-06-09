@@ -1,19 +1,20 @@
 class Thermostat {
   constructor() {
     this.temp = 20;
-  }
-
-  viewTemp() {
-    return this.temp;
+    this.psm = true;
   }
 
   raise(value) {
     this.temp += value;
   }
 
-  lower(val) {
-    if (_tempLowerLimit(val)) {
-      return this.temp - val;
+  lower(value) {
+    if (this._tempLowerLimit(value) === true) {
+  
+      return (this.temp -= value);
+    }
+    else {
+      return 'Hello';
     }
   }
 
@@ -25,3 +26,7 @@ class Thermostat {
     }
   }
 }
+
+let thermostat = new Thermostat();
+// thermostat.lower(10);
+console.log(thermostat.temp);
