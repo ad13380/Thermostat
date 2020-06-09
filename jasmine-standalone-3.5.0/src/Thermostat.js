@@ -18,6 +18,18 @@ class Thermostat {
     }
   }
 
+  switchPsm() {
+    return this.psm = !this.psm;
+  }
+
+  maxTemp() {
+    if (this.psm) {
+      return 25;
+    } else {
+      return 32;
+    }
+  }
+
   _tempLowerLimit(value) {
     if (this.temp - value >= 10) {
       return true;

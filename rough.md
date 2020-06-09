@@ -3,8 +3,6 @@ constructor this.temp = 20
 psm = true
 min_temp = 10
 
-function temp()
-this.temp
 
 function psm_off
 psm === false
@@ -16,14 +14,17 @@ max_temp = 25
 else
 max_temp = 32
 
+
+
+
 function raise(value)
+if ()
 temp + value
 
 
 function lower
 temp - 1
 
-temp -= value unless (temp -= value) < min_temp
 
 function current_usage
 if temp < 18
